@@ -10,7 +10,6 @@ export default async function handler(req, res) {
     width = 1400,
     height = 720,
   } = req.query
-  console.log(image)
   const dom = generatePage(title, image, mode)
   const browser = await chromium.puppeteer.launch({
     args: chromium.args,
