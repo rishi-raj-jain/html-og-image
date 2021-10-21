@@ -5,12 +5,13 @@ import chromium from 'chrome-aws-lambda'
 export default async function handler(req, res) {
   const {
     title,
+    mode = false, // light mode
     image = 'https://images.unsplash.com/photo-1579123521334-44e68095cd7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
     width = 1400,
     height = 720,
   } = req.query
   console.log(image)
-  const dom = generatePage(title, image)
+  const dom = generatePage(title, image, mode)
   const browser = await chromium.puppeteer.launch({
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
