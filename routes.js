@@ -8,7 +8,7 @@ module.exports = new Router()
   .match('/api', ({ cache }) => {
     cache({
       browser: {
-        maxAgeSeconds: 31536000,
+        maxAgeSeconds: 0,
         serviceWorkerSeconds: 31536000,
       },
       edge: {
