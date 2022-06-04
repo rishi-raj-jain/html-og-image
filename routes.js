@@ -13,6 +13,7 @@ module.exports = new Router()
       },
       edge: {
         maxAgeSeconds: 31536000,
+        forcePrivateCaching: true
       },
     })
   })
