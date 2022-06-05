@@ -11,11 +11,11 @@
     "format": "prettier '**/*' --write --ignore-unknown"
   },
   "dependencies": {
-    "chrome-aws-lambda": "^10.1.0",
     "next": "latest",
-    "puppeteer": "^14.2.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "puppeteer-core": "^14.2.1",
+    "chrome-aws-lambda": "^10.1.0"
   },
   "devDependencies": {
     "@layer0/cli": "^4.13.13",
