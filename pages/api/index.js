@@ -1,6 +1,5 @@
-var minify = require('html-minifier').minify
-import { generatePage } from '@/lib/page'
 import chromium from 'chrome-aws-lambda'
+import { generatePage } from '@/lib/page'
 
 export default async function handler(req, res) {
   const {
@@ -20,20 +19,13 @@ export default async function handler(req, res) {
   })
   const page = await browser.newPage()
   await page.setViewport({ width: parseInt(width), height: parseInt(height) })
-  await page.setContent(
-    minify(dom, {
-      collapseWhitespace: true,
-    })
-  )
+  await page.setContent(dom)
   await page.waitForTimeout(10000)
   const content = await page.$('body')
   const imageBuffer = await content.screenshot({ omitBackground: true })
   await page.close()
   await browser.close()
-  res.setHeader(
-    'Cache-Control',
-    `public, immutable, no-transform, s-maxage=31536000, max-age=31536000`
-  )
+  res.setHeader('Cache-Control', 'public, immutable, no-transform, s-maxage=31536000, max-age=31536000')
   res.setHeader('Content-Type', 'image/png')
   res.send(imageBuffer)
   res.status(200)
