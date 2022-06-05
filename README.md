@@ -4,7 +4,7 @@ A deployment of OG Image Generator to Layer0.
 
 ## Demo
 
-https://rishi-raj-jain-html-og-image-default.layer0-limelight.link/api?title=Something
+https://rishi-raj-jain-html-og-image-default.layer0-limelight.link/api?title=Incremental%20Static%20Generation&image=https://images.pexels.com/photos/12079516/pexels-photo-12079516.jpeg?cs=srgb&dl=pexels-ho%C3%A0i-nam-12079516.jpg&fm=jpg
 
 ## Try It Now
 
