@@ -17,4 +17,16 @@ module.exports = new Router()
       },
     })
   })
+  .match('/api', ({ cache }) => {
+    cache({
+      browser: {
+        maxAgeSeconds: 0,
+        serviceWorkerSeconds: 31536000,
+      },
+      edge: {
+        maxAgeSeconds: 31536000,
+        forcePrivateCaching: true,
+      },
+    })
+  })
   .use(nextRoutes)
