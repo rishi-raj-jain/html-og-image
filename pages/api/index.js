@@ -3,8 +3,8 @@ import chromium from 'chrome-aws-lambda'
 
 export default async function handler(req, res) {
   // Only allow POST to the given route
-  if (req.method === 'POST') {
-    const { title, mode, image, width = 1400, height = 720 } = req.body
+  if (req.method === 'GET') {
+    const { title, mode, image, width = 1400, height = 720 } = req.query
     const browser = await core.launch({
       args: chromium.args,
       defaultViewport: chromium.defaultViewport,
