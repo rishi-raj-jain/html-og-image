@@ -11,19 +11,22 @@
     "format": "prettier '**/*' --write --ignore-unknown"
   },
   "dependencies": {
+    "chrome-aws-lambda": "^10.1.0",
     "next": "latest",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
     "puppeteer": "^14.2.1",
-    "chrome-aws-lambda": "^10.1.0"
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "prettier": "^2.4.1",
     "@layer0/cli": "^4.13.13",
     "@layer0/core": "^4.13.13",
-    "@layer0/next": "^4.13.13",
-    "@layer0/react": "^4.13.13",
     "@layer0/devtools": "^4.13.13",
-    "@layer0/prefetch": "^4.13.13"
+    "@layer0/next": "^4.13.13",
+    "@layer0/prefetch": "^4.13.13",
+    "@layer0/react": "^4.13.13",
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "prettier": "^2.4.1",
+    "tailwindcss": "^3.0.24"
   }
 }
