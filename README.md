@@ -4,7 +4,7 @@ A deployment of OG Image Generator to Layer0.
 
 ## Demo
 
-https://rishi-raj-jain-html-og-image-default.layer0.link/api?title=Something
+https://rishi-raj-jain-html-og-image-default.layer0-limelight.link/api?title=Something
 
 ## Try It Now
 
