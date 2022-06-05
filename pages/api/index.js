@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     })
     const page = await browser.newPage()
     await page.setViewport({ width: parseInt(width), height: parseInt(height) })
-    await page.goto(`https://rishi-raj-jain-html-og-image-default.layer0-limelight.link/blogs?title=${title}&image=${image}&mode=${mode}`)
+    await page.goto(`https://rishi-raj-jain-html-og-image-default.layer0-limelight.link/blogs?title=${encodeURIComponent(title)}&image=${encodeURIComponent(image)}&mode=${encodeURIComponent(mode)}`)
     await page.waitForTimeout(5000)
     const content = await page.$('body')
     const imageBuffer = await content.screenshot({ omitBackground: true })
