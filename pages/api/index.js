@@ -1,15 +1,7 @@
 import chromium from 'chrome-aws-lambda'
-import { generatePage } from '@/lib/page'
 
 export default async function handler(req, res) {
-  const {
-    title,
-    mode = false, // light mode
-    image = 'https://images.unsplash.com/photo-1579123521334-44e68095cd7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
-    width = 1400,
-    height = 720,
-  } = req.query
-  const dom = generatePage(title, image, mode)
+  const { title, mode, image, width = 1400, height = 720 } = req.query
   const browser = await chromium.puppeteer.launch({
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
@@ -19,8 +11,9 @@ export default async function handler(req, res) {
   })
   const page = await browser.newPage()
   await page.setViewport({ width: parseInt(width), height: parseInt(height) })
-  await page.setContent(dom)
-  await page.waitForTimeout(10000)
+  await page.waitForTimeout(2000)
+  await page.goto(`https://rishi-raj-jain-html-og-image-default.layer0-limelight.link/blogs?name=${title}&image=${image}&mode=${mode}`)
+  await page.waitForTimeout(6000)
   const content = await page.$('body')
   const imageBuffer = await content.screenshot({ omitBackground: true })
   await page.close()

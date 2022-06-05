@@ -1,10 +1,13 @@
 # Deploy OG Image Generator to Layer0
+
 A deployment of OG Image Generator to Layer0.
 
 ## Demo
+
 https://rishi-raj-jain-html-og-image-default.layer0.link/api?title=Something
 
 ## Try It Now
+
 [![Deploy with Layer0](https://docs.layer0.co/button.svg)](https://app.layer0.co/deploy?repo=https://github.com/rishi-raj-jain/html-og-image)
 
 ## Getting Started
@@ -52,4 +55,5 @@ layer0 deploy
 See [deploying](https://docs.layer0.co/guides/deploying) for more information.
 
 ## Author
-- Rishi Raj Jain ([@rishi_raj_jain_](https://twitter.com/rishi_raj_jain_)) - [Layer0](https://layer0.co)
+
+- Rishi Raj Jain ([@rishi*raj_jain*](https://twitter.com/rishi_raj_jain_)) - [Layer0](https://layer0.co)
