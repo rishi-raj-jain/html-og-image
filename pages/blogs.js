@@ -21,12 +21,12 @@ const Blogs = ({ name, image, mode }) => {
 
 export default Blogs
 
-export async function getServerSideProps({ req }) {
+export async function getServerSideProps({ query }) {
   const {
     name = 'Sample Blog',
     image = 'https://images.unsplash.com/photo-1579123521334-44e68095cd7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
     mode = false,
-  } = req.query
+  } = query
   return {
     props: {
       name,
