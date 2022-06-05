@@ -1,8 +1,9 @@
+import core from 'puppeteer-core'
 import chromium from 'chrome-aws-lambda'
 
 export default async function handler(req, res) {
   const { title, mode, image, width = 1400, height = 720 } = req.query
-  const browser = await chromium.puppeteer.launch({
+  const browser = await core.launch({
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
     executablePath: await chromium.executablePath,
