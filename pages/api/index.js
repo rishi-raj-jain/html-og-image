@@ -2,7 +2,6 @@ import core from 'puppeteer-core'
 import chromium from 'chrome-aws-lambda'
 
 export default async function handler(req, res) {
-  console.log(req.headers.host)
   // Only allow POST to the given route
   if (req.method === 'GET') {
     const { title, mode, image, width = 1400, height = 720 } = req.query
@@ -15,7 +14,7 @@ export default async function handler(req, res) {
     })
     const page = await browser.newPage()
     await page.setViewport({ width: parseInt(width), height: parseInt(height) })
-    await page.goto(`https://rishi-raj-jain-html-og-image-default.layer0-limelight.link/blogs?title=${encodeURIComponent(title)}&image=${encodeURIComponent(image)}&mode=${encodeURIComponent(mode)}`)
+    await page.goto(`https://${req.headers.host}/blogs?title=${encodeURIComponent(title)}&image=${encodeURIComponent(image)}&mode=${encodeURIComponent(mode)}`)
     await page.waitForTimeout(5000)
     const content = await page.$('body')
     const imageBuffer = await content.screenshot({ omitBackground: true })
