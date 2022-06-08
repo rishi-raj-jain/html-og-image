@@ -2,6 +2,7 @@ import core from 'puppeteer-core'
 import chromium from 'chrome-aws-lambda'
 
 export default async function handler(req, res) {
+  console.log(req.headers)
   // Only allow POST to the given route
   if (req.method === 'GET') {
     const { title, mode, image, width = 1400, height = 720 } = req.query
