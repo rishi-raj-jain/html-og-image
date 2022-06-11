@@ -21,6 +21,11 @@ const Blogs = ({ title, image, mode }) => {
 
 export default Blogs
 
+export const config = {
+  unstable_runtimeJS: false,
+  unstable_JsPreload: false
+}
+
 export async function getServerSideProps({ query }) {
   let {
     title = 'Sample Blog',
